@@ -1,0 +1,137 @@
+  body {
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+    width: 100%;
+    overflow-x: hidden; /* Suppression de la barre de défilement horizontale */
+  }
+  .header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 10px;
+    height: 50px;
+    margin-bottom: 10px;
+  }
+
+  .logo img {
+    height: 70px;
+  }
+
+  .btn-nav {
+    display: flex;
+    gap: 30px; 
+    flex-wrap: wrap; 
+  }
+
+  .btn-nav a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 16px;
+    padding: 5px 10px; 
+    margin: 5px; 
+    display: inline-block;
+    position: relative;
+  }
+
+  @media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+    }
+    .btn-nav {
+        flex-direction: column;
+        gap: 10px; 
+    }
+  }
+
+  .btn-nav a:hover {
+    color: #1cabe2;
+  }
+
+  .btn-nav a:hover::after, .btn-nav a:focus::after {
+    content: '';
+    display: flex;
+    height: 2px;
+    width: 100%;
+    background-color: #1cabe2;
+    position: absolute;
+    bottom: 0; 
+    left: 0;
+  }
+
+
+
+  /* En-tête */
+  header {
+    background-color: #ffffff; /* Couleur de fond blanche */
+  }
+
+  .header div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+
+  /* Logo */
+  .logo img {
+    height: 50px; /* Réglage de la taille du logo */
+  }
+
+  /* Navigation principale */
+  .navbar, .compte {
+    display: flex;
+    align-items: center;
+  }
+
+
+
+  /* Formulaires */
+  form {
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ombre portée */
+    padding: 40px;
+    margin: 20px auto; /* Centrage et espacement */
+    width: auto; /* Ajustement de la largeur si nécessaire */
+    max-width: 500px; /* Largeur maximale pour éviter un formulaire trop large */
+  }
+
+  form li {
+    list-style-type: none;
+    margin-bottom: 10px; /* Marges plus compactes */
+  }
+
+  input[type="text"], input[type="datetime"], input[type="number"] {
+    width: 100%;
+    padding: 8px; /* Padding légèrement réduit */
+    margin: 4px 0; /* Marges verticales réduites */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  button {
+    margin-top: 5px; /* Marge supérieure réduite */
+    font-family: 'Quicksand', sans-serif;
+  }
+
+  button:hover {
+    background-color: #007bff; /* Bleu plus clair */
+  }
+
+  /* Pied de page */
+  footer {
+    background-color: #0053a4; /* Bleu UNICEF */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  h3 {
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+  }
