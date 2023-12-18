@@ -43,7 +43,7 @@
                         <?php
                         echo "<br>";
                         ?>
-                        <img src="<?php echo $val["img"]; ?>
+                        <img src="<?php echo $val["img"];?>">
                         <?php
                         echo $val["date"];?>
                            </div>
