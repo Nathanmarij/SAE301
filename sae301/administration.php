@@ -39,31 +39,30 @@
 <body>
     <header>
         <div class="header">
+            <div class="btn-nav navbar">
+                <!-- Boutons de navigation -->
+                <a href="#actions">
+                    <h2>Billetterie</h2>
+                </a>
+                <a href="forum.php">
+                    <h2>Forum</h2>
+                </a>
+                <a href="#interventions">
+                    <h2>Contact</h2>
+                </a>
+            </div>
             <div class="logo">
+                <!-- Logo -->
                 <img src="image/logouni.png" alt="UNICEF logo">
             </div>
-            <div class="btn-nav">
-                <div class="navbar">
-                    <a href="#actions">
-                        <h2>Billeterie</h2>
-                    </a>
-                    <a href="forum.php">
-                        <h2>Forum</h2>
-                    </a>
-                    <a href="#interventions">
-                        <h2>Contact</h2>
-                    </a>
-                </div>
-            </div>
-            <div class="btn-nav">
-                <div class="compte">
-                    <a href="inscription.php">
-                        <h2>Inscription</h2>
-                    </a>
-                    <a href="connexion.php">
-                        <h2>Connexion</h2>
-                    </a>
-                </div>
+            <div class="btn-nav compte">
+                <!-- Boutons d'inscription et de connexion -->
+                <a href="inscription.php">
+                    <h2>Inscription</h2>
+                </a>
+                <a href="connexion.php">
+                    <h2>Connexion</h2>
+                </a>
             </div>
         </div>
     </header>
