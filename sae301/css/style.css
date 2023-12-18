@@ -104,3 +104,40 @@ body {
     padding: 15%;
     border-radius: 15%;
 }
+
+/* Billeterie */
+
+.billeterie {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.billet {
+    margin: 8vh;
+    padding: 8vh;
+    background-color: #1cabe2;
+    box-shadow: rgba(0 ,0 ,0 ,0.3);
+    color: #ffffff;
+    border-radius: 5%;
+}
+
+.billet h3 {
+    font-size: 3em;
+}
+
+.billet h5 {
+    font-size: 2em;
+}
+
+.billet p {
+    margin-bottom: 10vh;
+}
+
+.lien {
+    text-decoration: none;
+    color: #1cabe2;
+    background-color: white;
+    padding: 2vh;
+    border-radius: 5%;
+}

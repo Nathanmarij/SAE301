@@ -51,21 +51,24 @@
             </div>
         </div>
     </header>
-    <section>
-        <article>
+    <section class="billeterie">
+        <article class="billet">
             <h3>Billet 1</h3>
             <h5>Prix du billet</h5>
-            <a href="">Acheter<a>
+            <p>Explication</p>
+            <a href="confirmation.html" class="lien">Acheter<a>
         </article>
-        <article>
+        <article class="billet">
             <h3>Billet 2</h3>
             <h5>Prix du billet</h5>
-            <a href="">Acheter<a>
+            <p>Explication</p>
+            <a href="confirmation.html" class="lien">Acheter<a>
         </article>
-        <article>
+        <article class="billet">
             <h3>Billet 3</h3>
             <h5>Prix du billet</h5>
-            <a href="">Acheter<a>
+            <p>Explication</p>
+            <a href="confirmation.html" class="lien">Acheter<a>
         </article>
     </section>
     <footer>
