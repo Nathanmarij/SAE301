@@ -1,0 +1,162 @@
+/* Ajoutez une transition de déplacement aux images du carrousel */
+.carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%; /* utilisez 100% plutôt que 100vw pour éviter les problèmes de défilement */
+}
+
+.carousel-images {
+    display: flex; /* maintenez flex ici pour une disposition en ligne des images */
+    transition: transform 0.5s ease-in-out; /* la transition pour le mouvement des slides */
+    will-change: transform; /* optimise les performances pour les animations */
+    justify-content: flex-start; /* aligne les éléments enfants au début du conteneur */
+}
+
+.carousel-images img {
+    width: 100%; /* utilisez 100% pour s'adapter à la largeur du conteneur parent */
+    flex-shrink: 0; /* empêche les images de se rétrécir */
+    display: block; /* les images sont affichées comme des blocs */
+}
+
+.carousel-descr {
+    position: absolute;
+    top: 40%;
+    left: 5%; /* Ajustez selon la marge souhaitée depuis la gauche */
+    transform: translateY(-50%);
+    text-align: left;
+    color: white;
+    z-index: 2;
+    max-width: 50%; /* Ajustez la largeur maximale pour l'alignement vertical */
+    transition: opacity 0.5s ease-in-out; /* Transition douce pour l'opacité */
+    opacity: 1; /* Opacité initiale définie sur 1 pour être totalement visible */
+}
+
+.carousel-title {
+    font-family: 'Kumbh Sans', sans-serif;
+    font-weight: 900;
+    font-size: 6vw; /* Ajustez la taille selon la largeur de l'écran */
+    margin-bottom: 1rem; /* Espace entre le titre et le texte */
+    color: transparent; /* Rend le texte transparent */
+    background-image: linear-gradient(to right, white, rgba(255, 255, 255, 0) 150%);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.carousel-text {
+    font-size: 1.25vw; /* Ajustez la taille selon la largeur de l'écran */
+    margin-bottom: 2rem; /* Espace entre le texte et le bouton */
+    max-width: 80%; /* Ajustez la largeur maximale pour l'alignement vertical */
+}
+
+.carousel-button {
+    display: inline-block;
+    background-color: rgba(28, 172, 224, 0.5);
+    color: white; /* Couleur du texte */
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid white;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.carousel-button:hover,
+.carousel-button:focus {
+    background-color: rgba(14, 90, 119, 0.5); /* Couleur de fond au survol */
+    /* Vos autres styles pour l'état de survol */
+}
+
+.carousel-descr,
+.carousel-images {
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-préfixé, devrait fonctionner dans les navigateurs récents */
+}
+
+/* Style général pour les boutons */
+.carousel .previous, .carousel .next {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 30%; /* Chaque bouton couvre la moitié de l'image */
+    height: 100%;
+    opacity: 0; /* Rend les boutons initialement transparents */
+    cursor: pointer;
+    display: flex;
+    transition: opacity 0.7s ease; /* Animation douce pour l'opacité */
+    color: #ffffff;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel .previous i, .carousel .next i {
+    font-size: xx-large;
+    display: inline-block;
+    vertical-align: middle;
+    opacity: 1;
+}
+
+.carousel .previous {
+    left: 0;
+    justify-content: flex-start; /* Aligner le contenu à gauche */
+    background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    border: none;
+}
+
+.carousel .next {
+    right: 0;
+    justify-content: flex-end; /* Aligner le contenu à droite */
+    background: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    border: none;
+}
+
+.carousel .previous:hover { 
+    opacity: 1; /* Rend les boutons visibles au survol */
+    background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
+.carousel .next:hover {
+    opacity: 1; /* Rend les boutons visibles au survol */
+    background: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
+/* Ajustements pour petits écrans */
+@media (max-width: 768px) {
+    .carousel .previous, .carousel .next {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+    }
+}
+
+.carousel-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 15;
+    opacity: 75%;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb; /* Couleur de base des points */
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    opacity: 75%;
+}
+
+.dot.active, .dot:hover {
+    background-color: #717171; /* Couleur au survol et pour le point actif */
+    opacity: 75%;
+}
+
+.main {
+    justify-content: center;
+}
