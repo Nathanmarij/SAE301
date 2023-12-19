@@ -1,0 +1,185 @@
+body {
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  width: 100%;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* Empêche le défilement horizontal si le contenu dépasse la largeur de la fenêtre */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 10px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.logo {
+  margin-top: 15px;
+  flex: 0 0 auto; /* Empêche le logo de se redimensionner */
+}
+
+/* Logo à gauche */
+.logo img {
+  height: 70px; /* Adjust as needed */
+  left: 0%;
+}
+
+/* Boutons de navigation principaux centrés */
+.btn-nav:first-of-type {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 30px; /* Existing gap */
+  flex-wrap: wrap; /* Allows items to wrap onto the next line */
+  max-width: 600px; /* Largeur maximale pour maintenir les boutons centrés */
+}
+
+.btn-nav a {
+  text-decoration: none;
+  color: #000000;
+  font-size: 16px;
+  padding: 5px 10px; /* Add padding around the links */
+  margin: 5px; /* Add margin around the links */
+  display: inline-block;
+  position: relative;
+}
+
+.btn-nav a:hover {
+  color: #1cabe2; /* Change text color for better visibility */
+}
+
+.btn-nav a:hover::after, .btn-nav a:focus::after {
+  content: '';
+  display: flex;
+  height: 2px; /* Height of the colored bar, adjust as needed */
+  width: 100%; /* Full width of the text */
+  background-color: #1cabe2; /* The color of the bar */
+  position: absolute; /* Absolute position the pseudo-element relative to the link */
+  bottom: 0; /* Align it to the bottom of the link */
+  left: 0; /* Align it to the left of the link */
+}
+
+/* Boutons d'inscription et de connexion à droite */
+.btn-nav:last-of-type {
+  margin-left: auto; /* Pousse les boutons vers la droite */
+  display: flex;
+  gap: 30px; /* Existing gap */
+  flex-wrap: wrap; /* Allows items to wrap onto the next line */
+}
+
+@media (max-width: 768px) {
+  .header {
+      flex-direction: column;
+      align-items: center;
+  }
+  .btn-nav {
+      position: static;
+      transform: none;
+      flex-direction: row;
+      justify-content: center;
+      width: 100%;
+      gap: 10px; /* Smaller gap for smaller screens */
+  }
+}
+
+
+  .btn-nav a:hover {
+    color: #1cabe2;
+  }
+
+  .btn-nav a:hover::after, .btn-nav a:focus::after {
+    content: '';
+    display: flex;
+    height: 2px;
+    width: 100%;
+    background-color: #1cabe2;
+    position: absolute;
+    bottom: 0; 
+    left: 0;
+  }
+
+
+
+  /* En-tête */
+  header {
+    background-color: #ffffff; /* Couleur de fond blanche */
+  }
+
+  .header div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+
+  /* Logo */
+  .logo img {
+    height: 50px; /* Réglage de la taille du logo */
+  }
+
+  /* Navigation principale */
+  .navbar, .compte {
+    display: flex;
+    align-items: center;
+  }
+
+
+
+  /* Formulaires */
+  form {
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ombre portée */
+    padding: 40px;
+    margin: 20px auto; /* Centrage et espacement */
+    width: auto; /* Ajustement de la largeur si nécessaire */
+    max-width: 500px; /* Largeur maximale pour éviter un formulaire trop large */
+  }
+
+  form li {
+    list-style-type: none;
+    margin-bottom: 10px; /* Marges plus compactes */
+  }
+
+  input[type="text"], input[type="datetime"], input[type="number"] {
+    width: 100%;
+    padding: 8px; /* Padding légèrement réduit */
+    margin: 4px 0; /* Marges verticales réduites */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  button {
+    margin-top: 5px; /* Marge supérieure réduite */
+    font-family: 'Quicksand', sans-serif;
+  }
+
+  button:hover {
+    background-color: #007bff; /* Bleu plus clair */
+  }
+
+  /* Pied de page */
+  footer {
+    background-color: #0053a4; /* Bleu UNICEF */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  h3 {
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+  }
