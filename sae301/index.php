@@ -19,9 +19,6 @@ try {
 } catch (Exception $e) { // sinon
     die("erreur"); // ecrire 'erreur'
 }
-if (isset($_SESSION["user"])) { // si l'utilisateur est connecté
-    $iduser=$_SESSION["user"];
-}
     ?>
 </head>
 <body>
@@ -38,9 +35,21 @@ if (isset($_SESSION["user"])) { // si l'utilisateur est connecté
                 <img src="image/logo.png" alt="UNICEF logo">
             </div>
             <div class="btn-nav compte">
-                <!-- Boutons d'inscription et de connexion -->
+                <!-- Boutons d'inscription et de connexion --><?php
+                if (isset($_SESSION["user"])) { // si l'utilisateur est connecté
+                    $requete = 'SELECT id_user, nom, prenom FROM user WHERE id_user = :id';
+                    $statement = $bdd->prepare($requete);
+                    $statement->bindParam(':id', $iduser, PDO::PARAM_INT);
+                    $statement->execute();
+                    $identite = $statement->fetchAll(PDO::FETCH_ASSOC);
+                $iduser=$_SESSION["user"];
+                echo '<a href="deconnexion.php"><h2>Déconnexion</h2></a>';}
+                else {?>
                 <a href="inscription.php"><h2>Inscription</h2></a>
-                <a href="connexion.php"><h2>Connexion</h2></a>
+                <a href="connexion.php"><h2>Connexion</h2></a><?php
+                }?>
+
+
             </div>
         </div>
     </header>
@@ -102,21 +111,3 @@ if (isset($_SESSION["user"])) { // si l'utilisateur est connecté
     </footer>
 </body>
 </html>
-    <h1>Vous êtes connecté</h1>
-    <a href="deconnexion.php"><h1>deconnexion</h1></a>
-    <?php 
-    $requete = 'SELECT id_user, nom, prenom FROM user WHERE id_user = :id';
-    $statement = $bdd->prepare($requete);
-    $statement->bindParam(':id', $iduser, PDO::PARAM_INT);
-    $statement->execute();
-    $identite = $statement->fetchAll(PDO::FETCH_ASSOC);
-    } else { // sinon
-    ?> <h1><a href="inscription.php">
-        <?php echo "S'inscrire"; ?>
-    </a></h1>
-    <?php
-}
-?>
-<a href="forum.php"><h2>Forum</h2></a>
-<a href="images.php"><h2>Images</h2></a>
-<a href="billeterie.php"><h2>Billeterie</h2></a>
