@@ -111,7 +111,27 @@
                 <button type="reset">Réinitialiser</button>
             </form>
         </article>
+        <article class="suppfestival">
+            <h3>Supprimer un festival<h3>
+            <form method="POST">
+            <li>
+            <label for="nom">Choisir le nom du festival</label>
+            <input>
+            <li>
+            <a href="">Supprimer le Festival</a>
+            <a href="">Supprimer le nom</a>
+            <a href="">Supprimer la date</a>
+            <a href="">Supprimer le nombre de place</a>
+            <a href="">Supprimer le lieu</a>
+            <a href="">Supprimer le premier artiste</a>
+            <a href="">Supprimer le second artiste</a>
+            <a href="">Supprimer le troisième artiste</a>
+            <a href="">Supprimer le quatrième artiste</a>
+            <a href="">Supprimer le cinqième artiste</a>
+            </form>
+        </article>
     </section>
+
     <footer>
 
     </footer>
