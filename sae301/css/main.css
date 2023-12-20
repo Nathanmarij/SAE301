@@ -33,6 +33,7 @@
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
+    margin-top: 2em;
 }
 
 .textimg {
@@ -59,5 +60,145 @@
 .textimg img {
     width: 35%; /* Ajustez selon la taille souhaitée pour l'image */
     border-radius: 20px; /* Arrondi des coins de l'image */
-    max-width: 50%; /* Maximum 40% du conteneur .textimg */
+    width: 35em; /* Maximum 40% du conteneur .textimg */
+}
+
+
+.unicert h1 {
+    margin-top: 3em;
+    text-align: center;
+    margin-bottom: 3em;
+}
+
+.youtubers {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.ytbr {
+    padding-bottom:2em;
+    padding-left:2em;
+    padding-right:2em;
+    padding-top: 16em;
+    border-radius: 2em;
+    width:13em;
+    text-align: center;
+    margin:1em;
+    color: white;
+}
+
+.inox {
+    background-image: url("../image/inox.png");
+}
+
+.michou {
+    background-image: url("../image/michou.png");
+}
+
+.pidi {
+    background-image: url("../image/pidi.png");
+}
+
+.valouzz {
+    background-image: url("../image/valouzz.png");
+}
+
+.lebouseuh {
+    background-image: url("../image/lebouseuh.png");
+}
+
+.apo {
+    background-image: url("../image/apo.png");
+}
+
+.joyca {
+    background-image: url("../image/joyca.png");
+}
+
+.mastu {
+    background-image: url("../image/mastu.png");
+}
+
+
+.reserv {
+    text-align: center;
+    margin-top: 10em;
+    margin-bottom: 10em;
+}
+
+.btn-reserv {
+    background-color: #00A3FF;
+    padding-bottom:0.2em;
+    padding-left:4em;
+    padding-right:4em;
+    padding-top: 0.2em;
+    border-radius: 2em;
+    margin-top: 4em;
+    font-size: 1.6em;
+    color:azure;
+    text-decoration:none;
+}
+
+
+.btn-reserv:hover {
+    background-color: #00A3FF;
+    padding-bottom:0.3em;
+    padding-left:5em;
+    padding-right:5em;
+    padding-top: 0.3em;
+    transition: padding 1s;
+}
+
+
+footer {
+    background-color: #1E1E1E;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    color: white;
+    text-align: left;
+    padding-top: 3em;
+    padding-bottom: 3em;
+}
+
+footer img {
+    width: 35em;
+}
+
+footer a {
+    color: white;
+}
+
+footer .img img {
+    width: 3em;
+}
+
+.liens {
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+
+.reseaux{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+footer h2 {
+    font-size: 2em;;
+}
+
+footer a {
+    font-size : 1.2em;
+}
+
+.margeheuu{
+    margin-left: 8em;
+}
+
+
+footer p {
+    text-align: center;
 }

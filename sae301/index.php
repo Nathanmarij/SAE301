@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
     <link href="css/header.css" type="text/css" rel="stylesheet" />
     <link href="css/carousel.css" type="text/css" rel="stylesheet" />
-    <link href="css/apropos.css" type="text/css" rel="stylesheet" />
+    <link href="css/main.css" type="text/css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700;900&display=swap" rel="stylesheet">
     <script src="js/carousel.js"></script>
@@ -26,7 +26,7 @@ try {
         <div class="header">
             <div class="btn-nav navbar">
                 <!-- Boutons de navigation -->
-                <a href="#actions"><h2>Billetterie</h2></a>
+                <a href="billeterie.php"><h2>Billetterie</h2></a>
                 <a href="forum.php"><h2>Forum</h2></a>
                 <a href="#interventions"><h2>Contact</h2></a>
             </div>
@@ -86,28 +86,99 @@ try {
                 <br><br>La priorité est donnée aux enfants les plus vulnérables, notamment victimes de la guerre, de catastrophes naturelles, de la pauvreté extrême et de toute forme de violence ou d’exploitation dans les pays les plus démunis. 
                 Elle intervient également en cas d’urgence en coordination avec les organismes des Nations unies, les principales organisations humanitaires, et les gouvernements.
             </p>
-            <img src="image/imagehistoire.jpg"></img>
+            <img src="image/imagehistoire.png"></img>
         </div>
     </div>
     <div class="unicert">
-        <h1>À propos de l'Unicert</h1>
+        <h1>Voici tout les <strong> ARTISTES </strong> présents sur scène.</h1>
         <div class="youtubers">
-            <div class="ytbr">
+            <div class="ytbr inox">
                 <img></img>
-                <h2>aaa</h2>
+                <h2>INOXTAG</h2>
             </div>
-            <div class="ytbr">
+            <div class="ytbr michou">
                 <img></img>
-                <h2>aaa</h2>
+                <h2>MICHOU</h2>
             </div>
-            <div class="ytbr">
+            <div class="ytbr pidi">
                 <img></img>
-                <h2>aaa</h2>
+                <h2>PIDI</h2>
+            </div>
+            <div class="ytbr valouzz">
+                <img></img>
+                <h2>VALOUZZ</h2>
+            </div>
+            <div class="ytbr lebouseuh">
+                <img></img>
+                <h2>LEBOUSEUH</h2>
+            </div>
+            <div class="ytbr apo">
+                <img></img>
+                <h2>APO</h2>
+            </div>
+            <div class="ytbr joyca">
+                <img></img>
+                <h2>JOYCA</h2>
+            </div>
+            <div class="ytbr mastu">
+                <img></img>
+                <h2>MASTU</h2>
             </div>
         </div>
     </div>
+
+    <div class="reserv"> 
+        <h1> N'hésitez plus ! </h1>
+        <a href="billeterie.php" class="btn-reserv">Billetterie</a>
+    </div>
+
     <footer>
         
+        <img src="image/illustration.png" class=""/>
+
+        <div>
+            <div class="liens">
+                <div>
+                    <h2> LE CONCERT </h2>
+                    <a href="billeterie.php"> Billeterie </a> <br>
+                    <a href="forum.php"> Communautée </a> <br>
+                    <a href=""> Contact </a> <br>
+                </div>
+
+                <div class="margeheuu">
+                    <h2> A PROPOS </h2>
+                    <a href="https://www.unicef.fr/qui-sommes-nous/"> Qui sommes nous ? </a> <br>
+                    <a href="https://www.unicef.fr/convention-droits-enfants/"> Droits de l’enfant (CIDE) </a> <br>
+                    <a href="https://www.unicef.fr/qui-sommes-nous/decouvrir-l-unicef/"> Notre histoire </a> <br>
+                    <a href="https://www.unicef.fr/qui-sommes-nous/transparence-financiere-de-lunicef-france/"> Transparence financière </a> <br>
+                </div>
+            </div>
+
+            <div class="liens">
+                <div>
+                    <h2> LIENS UTILES </h2>
+                    <a href="https://www.unicef.fr/se-connecter/"> Espace donnateur </a> <br>
+                    <a href="https://www.unicef.fr/faire-un-don/la-reduction-dimpot-associee-a-votre-don/"> Déduction et reçu fiscal </a> <br>
+                    <a href="https://don.unicef.fr/don-ponctuel/~mon-don"> Faire un don </a> <br>
+                    <a href="https://www.unicef.fr/vous-avez-des-questions/"> FAQ </a> <br>
+                    <a href="https://www.unicef.fr/contact/#1"> Nous contacter </a> <br>
+                    <a href="https://www.unicef.fr/actualites/communique-de-presse/"> Espace presse </a> <br>
+                </div>
+
+                <div class="margeheuu">
+                    <h2> NOUS RETROUVER </h2>
+                    <div class="reseaux">
+                        <a class="img" href="https://www.instagram.com/unicef_france/"><img src="image/instagram.png" alt=""/></a>
+                        <a class="img" href="https://www.facebook.com/UNICEF.France/"><img src="image/facebook.png" alt=""/></a>
+                    </div>
+
+                    <div class="reseaux">
+                        <a class="img" href="https://www.tiktok.com/@unicef_france"><img src="image/tiktok.png" alt=""/></a>
+                        <a class="img" href="https://www.linkedin.com/company/unicef-france?originalSubdomain=fr" ><img src="image/internet.png" alt=""/></a>
+                    </div>
+                </div>
+            </div>
+            <p> © 2024 Unicert.fr Tous droits réservés.<p>
     </footer>
 </body>
 </html>
