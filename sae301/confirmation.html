@@ -1,36 +1,44 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Merci pour votre achat - UNICERT 2024</title>
-<link rel="stylesheet" href="stylesconfirmation.css">
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
-<link rel="icon"  href="favicon.ico">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Merci pour votre achat - UNICERT 2024</title>
+  <link rel="stylesheet" href="stylesconfirmation.css">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico">
 </head>
+
 <body>
 
-<div class="thank-you-container">
-  <h1>UNICERT 2024</h1>
-  <p>Merci de votre achat</p>
-  <div class="media-container">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/s88GOMqmXP8?si=2hg0uZw4sj4w6xL3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  </div>
-  <button class="button" onclick="goBack()">Retourner à la page d'accueil</button>
-  <button class="donate-button">Faire un don</button>
-</div>
+  <div class="thank-you-container">
+    <h1>UNICERT 2024</h1>
+    <p>Merci de votre achat</p>
+    <div class="media-container">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/s88GOMqmXP8?si=2hg0uZw4sj4w6xL3"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </div>
+    <button class="button" onclick="goBack()">Retourner à la page d'accueil</button>
+    <button class="donate-button">Faire un don</button>
+  </div>
 
-<footer>
-  Contactez-nous à <a href="mailto:info@unicert.com" style="color: white;">info@unicert.com</a>
-</footer>
+  <footer>
+    Contactez-nous à <a href="mailto:info@unicert.com" style="color: white;">info@unicert.com</a>
+  </footer>
 
-<script>
-  function goBack() {
-    window.location.href = 'index.html'; // Replace with the URL of your homepage
-  }
-  document.querySelector('.donate-button').onclick = function() {
-    window.location.href = 'https://www.unicef.fr/faire-un-don/';
-  };
-</script>
+  <script>
+    function goBack() {
+      window.location.href = 'index.php'; // URL mise à jour pour renvoyer à index.php
+    }
+    document.querySelector('.donate-button').onclick = function () {
+      window.location.href = 'https://www.unicef.fr/faire-un-don/';
+    };
+  </script>
+
 
 </body>
+
 </html>

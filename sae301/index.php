@@ -26,9 +26,9 @@ try {
         <div class="header">
             <div class="btn-nav navbar">
                 <!-- Boutons de navigation -->
-                <a href="billeterie.php"><h2>Billetterie</h2></a>
+                <a href="billetterie.php"><h2>Billetterie</h2></a>
                 <a href="forum.php"><h2>Forum</h2></a>
-                <a href="#interventions"><h2>Contact</h2></a>
+                <a href="Infos Pratiques.php"><h2>Infos Pratiques</h2></a>
             </div>
             <div class="logo">
                 <!-- Logo -->
@@ -129,7 +129,7 @@ try {
 
     <div class="reserv"> 
         <h1> N'hésitez plus ! </h1>
-        <a href="billeterie.php" class="btn-reserv">Billetterie</a>
+        <a href="billetterie.php" class="btn-reserv">Billetterie</a>
     </div>
 
     <footer>
@@ -140,9 +140,9 @@ try {
             <div class="liens">
                 <div>
                     <h2> LE CONCERT </h2>
-                    <a href="billeterie.php"> Billeterie </a> <br>
+                    <a href="billetterie.php"> Billeterie </a> <br>
                     <a href="forum.php"> Communautée </a> <br>
-                    <a href=""> Contact </a> <br>
+                    <a href="Infos Pratiques.php"> Infos Pratiques </a> <br>
                 </div>
 
                 <div class="margeheuu">

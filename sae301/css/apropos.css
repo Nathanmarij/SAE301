@@ -1,0 +1,63 @@
+.histoire {
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    background-color: #1E1E1E; /* Couleur de fond en cas de non-chargement de l'image */
+    color: #fff; /* Couleur du texte */
+    display: flex;
+    align-items: center; /* Centre verticalement le contenu */
+    justify-content: center; /* Centre horizontalement le contenu */
+    height: 100vh; /* Hauteur totale de la vue, ajustez selon vos besoins */
+    overflow: hidden; /* Empêche le pseudo-élément de déborder */
+}
+
+.histoire::after {
+    content: '';
+    background: url('../image/unicef.png') no-repeat center center; /* Ajustez le chemin si nécessaire */
+    background-size: 75%; /* Ajustez la taille de l'image ici */
+    opacity: 0.15; /* Opacité de 15% */
+    position: absolute;
+    top: 50px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1; /* Place l'image de fond derrière le contenu */
+}
+
+#tapropos {
+    text-align: center;
+    font-family: 'Kumbh Sans', sans-serif;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+}
+
+.textimg {
+    display: flex; /* Utilise Flexbox pour la mise en page */
+    flex-direction: row; /* Organise les éléments en ligne */
+    justify-content: space-between; /* Espacement égal entre les éléments */
+    align-items: center; /* Centre les éléments verticalement */
+    width: 80%; /* La largeur que vous préférez */
+    margin: auto; /* Centre le bloc .textimg horizontalement */
+    z-index: 2; /* Assure que le texte est au-dessus du fond */
+    height: 50%; /* Définissez une hauteur pour centrer verticalement dans .histoire */
+    position: absolute; /* Positionnement absolu par rapport à .histoire */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrage parfait dans .histoire */
+}
+
+.textimg p {
+    font-size: 1.25vw; /* Ajustez la taille selon la largeur de l'écran */
+    margin-bottom: 2rem; /* Espace entre le texte et l'image si nécessaire */
+    max-width: 50%; /* Maximum 60% du conteneur .textimg */
+}
+
+.textimg img {
+    width: 35%; /* Ajustez selon la taille souhaitée pour l'image */
+    border-radius: 20px; /* Arrondi des coins de l'image */
+    max-width: 50%; /* Maximum 40% du conteneur .textimg */
+}

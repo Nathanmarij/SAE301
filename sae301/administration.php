@@ -53,7 +53,9 @@
             </div>
             <div class="logo">
                 <!-- Logo -->
-                <img src="image/logouni.png" alt="UNICEF logo">
+                <a href="index.php">
+                        <img src="image/logo.png" alt="UNICEF logo">
+                    </a>
             </div>
             <div class="btn-nav compte">
                 <!-- Boutons d'inscription et de connexion -->
