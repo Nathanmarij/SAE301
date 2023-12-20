@@ -1,0 +1,87 @@
+/* General Body Styling */
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Form Container Styling */
+.form {
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+.champ {
+    font-family: 'Quicksand', sans-serif;
+}
+
+/* Input Field Styling */
+.form .champ {
+    width: calc(100% - 20px);
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #dcdcdc;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+/* Placeholder Styling */
+.form .champ::placeholder {
+    color: #a3a3a3;
+}
+
+@keyframes rotatingGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Submit Button Styling with Dynamic Gradient */
+.form input[type="submit"] {
+    color: white;
+    font-size: 16px;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background-image: linear-gradient(60deg, #007bff, #0056b3, #007bff, #0056b3); /* Blue gradient */
+    background-size: 300% 300%; /* Extend background size for animation */
+    animation: rotatingGradient 2s linear infinite; /* Apply animation */
+    box-shadow: 0 5px #003875; /* Increase shadow on hover for 3D effect */
+    transition: transform 0.3s, box-shadow 0.3s; /* Apply transition to transform and box-shadow */
+}
+
+.form input[type="submit"]:hover {
+    transform: translateY(2px); /* Slightly raise the button */
+    box-shadow: 0 2px #003875; /* Initial shadow for depth */
+}
+
+/* Link and Paragraph Styling */
+.form p {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.form a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.form a:hover {
+    text-decoration: underline;
+}
