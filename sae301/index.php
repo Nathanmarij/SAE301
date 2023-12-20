@@ -134,7 +134,7 @@ try {
 
     <footer>
         
-        <img src="image/illustration.png" class=""/>
+        <img src="image/illustration.png" class="illus"/>
 
         <div>
             <div class="liens">
