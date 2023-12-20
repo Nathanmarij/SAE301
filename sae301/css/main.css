@@ -202,3 +202,60 @@ footer a {
 footer p {
     text-align: center;
 }
+
+/* Responsive */
+
+@media screen and (max-width: 1023px) {
+
+    .textimg {
+        flex-direction: column;
+    }
+
+    .textimg p {
+        font-size: large;
+        text-align: center;
+    }
+    
+    .carousel-title {
+        font-size: 7vw;
+    }
+
+    .carousel-text {
+        font-size: 2.5vw;
+    }
+
+    .histoire {
+        height: 120vh;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+
+    .textimg {
+        flex-direction: column;
+    }
+
+    .textimg p {
+        font-size: small;
+        text-align: center;
+    }
+
+    .histoire {
+        height: 150vh;
+    }
+
+    .illus {
+        width: 10em;
+    }
+
+    .liens {
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .margeheuu {
+        margin-left: initial;
+    }
+
+}
