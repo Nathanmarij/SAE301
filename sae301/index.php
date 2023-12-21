@@ -53,6 +53,7 @@ try {
             </div>
         </div>
     </header>
+    <div>
     <div class="main">
         <div class="carousel">
             <div class="carousel-descr">
@@ -61,7 +62,7 @@ try {
                 Découvrez le concert caritatif Unicert 2024, un événement musical diversifié avec des stars de tous genres. 
                 Idéal pour tous les âges, cet événement promet des sensations uniques et mémorables !
                 </p>
-                <a href="forum.php" class="carousel-button">EN SAVOIR PLUS</a>
+                <a href="#artistes" class="carousel-button">EN SAVOIR PLUS</a>
             </div>
             <div class="carousel-images">
                 <img src="image/image1.jpg" alt="img1">
@@ -89,41 +90,106 @@ try {
             <img src="image/imagehistoire.png"></img>
         </div>
     </div>
+    <div id="artistes"> </div>
     <div class="unicert">
         <h1>Voici tout les <strong> ARTISTES </strong> présents sur scène.</h1>
         <div class="youtubers">
-            <div class="ytbr inox">
-                <img></img>
+            <button class="ytbr inox" onclick="openPopup1()">
                 <h2>INOXTAG</h2>
-            </div>
-            <div class="ytbr michou">
-                <img></img>
+            </button>
+            <button class="ytbr michou" onclick="openPopup2()">
                 <h2>MICHOU</h2>
-            </div>
-            <div class="ytbr pidi">
-                <img></img>
+            </button>
+            <button class="ytbr pidi" onclick="openPopup3()">
                 <h2>PIDI</h2>
-            </div>
-            <div class="ytbr valouzz">
-                <img></img>
+            </button>
+            <button class="ytbr valouzz" onclick="openPopup4()">
                 <h2>VALOUZZ</h2>
-            </div>
-            <div class="ytbr lebouseuh">
-                <img></img>
+            </button>
+            <button class="ytbr lebouseuh" onclick="openPopup5()">
                 <h2>LEBOUSEUH</h2>
-            </div>
-            <div class="ytbr apo">
-                <img></img>
+            </button>
+            <button class="ytbr apo" onclick="openPopup6()">
                 <h2>APO</h2>
-            </div>
-            <div class="ytbr joyca">
-                <img></img>
+            </button>
+            <button class="ytbr joyca" onclick="openPopup()">
                 <h2>JOYCA</h2>
-            </div>
-            <div class="ytbr mastu">
-                <img></img>
+            </button>
+            <button class="ytbr mastu" onclick="openPopup()">
                 <h2>MASTU</h2>
+            </button>
+
+
+            <!-- ------------- test pop up -------------- -->
+
+            <div class="popup1" id="popup1">
+                <div class="popup-content">
+                    <span class="close" onclick="closePopup1()">&times;</span>
+                    <img src="image/inoxfiche.png" alt="Large Image">
+                </div>
             </div>
+
+            <div class="popup2" id="popup2">
+                <div class="popup-content">
+                    <span class="close" onclick="closePopup2()">&times;</span>
+                    <img src="image/michoufiche.jpg" alt="Large Image">
+                </div>
+            </div>
+
+            <div class="popup3" id="popup3">
+                <div class="popup-content">
+                    <span class="close" onclick="closePopup3()">&times;</span>
+                    <img src="image/pidifiche.png" alt="Large Image">
+                </div>
+            </div>
+
+            <div class="popup4" id="popup4">
+                <div class="popup-content">
+                    <span class="close" onclick="closePopup4()">&times;</span>
+                    <img src="image/valouzzfiche.png" alt="Large Image">
+                </div>
+            </div>
+
+            <script>
+            function openPopup1() {
+                document.getElementById("popup1").style.display = "block";
+            }
+
+            function openPopup2() {
+                document.getElementById("popup2").style.display = "block";
+            }
+
+            function openPopup3() {
+                document.getElementById("popup3").style.display = "block";
+            }
+
+            function openPopup4() {
+                document.getElementById("popup4").style.display = "block";
+            }
+
+
+
+            function closePopup1() {
+                document.getElementById("popup1").style.display = "none";
+            }
+
+            function closePopup2() {
+                document.getElementById("popup2").style.display = "none";
+            }
+
+            function closePopup3() {
+                document.getElementById("popup3").style.display = "none";
+            }
+
+            function closePopup4() {
+                document.getElementById("popup4").style.display = "none";
+            }
+
+            
+            </script>
+
+            <!-- --------------------------------------- -->
+
         </div>
     </div>
 
@@ -133,52 +199,65 @@ try {
     </div>
 
     <footer>
-        
-        <img src="image/illustration.png" class="illus"/>
+        <div class="premierepartie">    
+            <img class="illustration" src="image/illustration.png" class="illus"/>
 
-        <div>
-            <div class="liens">
-                <div>
-                    <h2> LE CONCERT </h2>
-                    <a href="billetterie.php"> Billeterie </a> <br>
-                    <a href="forum.php"> Communautée </a> <br>
-                    <a href="Infos Pratiques.php"> Infos Pratiques </a> <br>
-                </div>
-
-                <div class="margeheuu">
-                    <h2> A PROPOS </h2>
-                    <a href="https://www.unicef.fr/qui-sommes-nous/"> Qui sommes nous ? </a> <br>
-                    <a href="https://www.unicef.fr/convention-droits-enfants/"> Droits de l’enfant (CIDE) </a> <br>
-                    <a href="https://www.unicef.fr/qui-sommes-nous/decouvrir-l-unicef/"> Notre histoire </a> <br>
-                    <a href="https://www.unicef.fr/qui-sommes-nous/transparence-financiere-de-lunicef-france/"> Transparence financière </a> <br>
-                </div>
-            </div>
-
-            <div class="liens">
-                <div>
-                    <h2> LIENS UTILES </h2>
-                    <a href="https://www.unicef.fr/se-connecter/"> Espace donnateur </a> <br>
-                    <a href="https://www.unicef.fr/faire-un-don/la-reduction-dimpot-associee-a-votre-don/"> Déduction et reçu fiscal </a> <br>
-                    <a href="https://don.unicef.fr/don-ponctuel/~mon-don"> Faire un don </a> <br>
-                    <a href="https://www.unicef.fr/vous-avez-des-questions/"> FAQ </a> <br>
-                    <a href="https://www.unicef.fr/contact/#1"> Nous contacter </a> <br>
-                    <a href="https://www.unicef.fr/actualites/communique-de-presse/"> Espace presse </a> <br>
-                </div>
-
-                <div class="margeheuu">
-                    <h2> NOUS RETROUVER </h2>
-                    <div class="reseaux">
-                        <a class="img" href="https://www.instagram.com/unicef_france/"><img src="image/instagram.png" alt=""/></a>
-                        <a class="img" href="https://www.facebook.com/UNICEF.France/"><img src="image/facebook.png" alt=""/></a>
+            <div>
+                <div class="liens">
+                    <div>
+                        <h2> LE CONCERT </h2>
+                        <a href="billetterie.php"> Billeterie </a> <br>
+                        <a href="forum.php"> Communautée </a> <br>
+                        <a href="Infos Pratiques.php"> Infos Pratiques </a> <br>
                     </div>
 
-                    <div class="reseaux">
-                        <a class="img" href="https://www.tiktok.com/@unicef_france"><img src="image/tiktok.png" alt=""/></a>
-                        <a class="img" href="https://www.linkedin.com/company/unicef-france?originalSubdomain=fr" ><img src="image/internet.png" alt=""/></a>
+                    <div class="margeheuu">
+                        <h2> A PROPOS </h2>
+                        <a href="https://www.unicef.fr/qui-sommes-nous/"> Qui sommes nous ? </a> <br>
+                        <a href="https://www.unicef.fr/convention-droits-enfants/"> Droits de l’enfant (CIDE) </a> <br>
+                        <a href="https://www.unicef.fr/qui-sommes-nous/decouvrir-l-unicef/"> Notre histoire </a> <br>
+                        <a href="https://www.unicef.fr/qui-sommes-nous/transparence-financiere-de-lunicef-france/"> Transparence financière </a> <br>
+                    </div>
+                </div>
+
+                <div class="liens">
+                    <div>
+                        <h2> LIENS UTILES </h2>
+                        <a href="https://www.unicef.fr/se-connecter/"> Espace donnateur </a> <br>
+                        <a href="https://www.unicef.fr/faire-un-don/la-reduction-dimpot-associee-a-votre-don/"> Déduction et reçu fiscal </a> <br>
+                        <a href="https://don.unicef.fr/don-ponctuel/~mon-don"> Faire un don </a> <br>
+                        <a href="https://www.unicef.fr/vous-avez-des-questions/"> FAQ </a> <br>
+                        <a href="https://www.unicef.fr/contact/#1"> Nous contacter </a> <br>
+                        <a href="https://www.unicef.fr/actualites/communique-de-presse/"> Espace presse </a> <br>
+                    </div>
+
+                    <div class="margeheuu">
+                        <h2> NOUS RETROUVER </h2>
+                        <div>
+                            <div class="reseaux">
+                                <a class="img" href="https://www.instagram.com/unicef_france/"><img src="image/instagram.png" alt=""/></a>
+                                <a class="img" href="https://www.facebook.com/UNICEF.France/"><img src="image/facebook.png" alt=""/></a>
+                            </div>
+
+                            <div class="reseaux">
+                                <a class="img" href="https://www.tiktok.com/@unicef_france"><img src="image/tiktok.png" alt=""/></a>
+                                <a class="img" href="https://www.linkedin.com/company/unicef-france?originalSubdomain=fr" ><img src="image/internet.png" alt=""/></a>
+                            </div>
+                        <div>
                     </div>
                 </div>
             </div>
+        </div>
+        <!-- Nécéssaire pour fermer la balise de la premiere partie -->
+        </div>
+        </div>
+        <!-- ------------------------------------------------------ -->
+
+        <div class="deuxiemepartie">
+            <img src="image/logounicefentier.png" alt="">
             <p> © 2024 Unicert.fr Tous droits réservés.<p>
+            
+        </div>
     </footer>
 </body>
 </html>
