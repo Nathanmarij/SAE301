@@ -1,0 +1,121 @@
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.header {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.form-container {
+    background-color: #fff;
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 5px;
+}
+
+h1 {
+    text-align: center;
+    color: #007bff;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    border: 0;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+span {
+    color: #555;
+}
+
+.message {
+    color: red;
+    text-align: center;
+}
+
+/* Styles généraux pour les boutons */
+button {
+    background-color: #007bff; /* Couleur de fond bleue */
+    color: white; /* Texte blanc */
+    border: none; /* Pas de bordure */
+    padding: 10px 15px; /* Padding */
+    border-radius: 5px; /* Bords arrondis */
+    cursor: pointer; /* Curseur pointeur */
+    font-size: 16px; /* Taille du texte */
+    margin: 5px; /* Marge autour des boutons */
+    transition: background-color 0.3s; /* Transition pour l'effet au survol */
+}
+
+/* Effet au survol sur les boutons */
+button:hover {
+    background-color: #0056b3; /* Couleur de fond plus foncée au survol */
+}
+
+/* Styles spécifiques pour les boutons dans la section mot de passe */
+#mdpact button, #change-password-section button {
+    background-color: #28a745; /* Couleur de fond verte */
+}
+
+#mdpact button:hover, #change-password-section button:hover {
+    background-color: #218838; /* Couleur de fond plus foncée au survol */
+}
+
+.form-group {
+    margin-bottom: 15px; /* Espacement entre les groupes de formulaires */
+}
+
+.form-group input {
+    width: 100%; /* Largeur totale pour les champs de saisie */
+    padding: 8px 10px; /* Padding pour les champs de saisie */
+    margin: 5px 0; /* Marge autour des champs de saisie */
+    border-radius: 4px; /* Bords arrondis pour les champs de saisie */
+    border: 1px solid #ddd; /* Bordure des champs de saisie */
+}
+
+.btn-deconnexion, .btn-supprimer {
+    background-color: #dc3545; /* Rouge pour la suppression, bleu pour la déconnexion */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none; /* Pour le lien de déconnexion */
+    margin-top: 10px;
+}
+
+.btn-deconnexion:hover, .btn-supprimer:hover {
+    background-color: #bd2130; /* Foncer la couleur au survol */
+}
+
+.decsupp {
+    display: flex
+}
