@@ -1,0 +1,106 @@
+/* Styles généraux */
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px 0;
+    margin: 0;
+}
+
+a {
+    color: #00A3FF;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Conteneur principal */
+.main {
+    width: 80%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.info-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.info-container h1 {
+    text-align: center;
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.info-container h2 {
+    color: #333;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.info-container p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+/* Sections spécifiques */
+.section-title {
+    background-color: #00A3FF;
+    color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.section-content {
+    padding: 15px;
+    border-left: 4px solid #00A3FF;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .main {
+        width: 95%;
+    }
+
+    .info-container {
+        padding: 15px;
+    }
+
+    .info-container h1 {
+        font-size: 24px;
+    }
+
+    .info-container h2 {
+        font-size: 20px;
+    }
+}
+
+/* Footer Styles */
+footer {
+    background-color: #1E1E1E;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+footer a {
+    color: #fff;
+}
+
+/* Ajoutez ici d'autres styles spécifiques à votre footer si nécessaire */
