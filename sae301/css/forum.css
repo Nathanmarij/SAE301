@@ -1,0 +1,142 @@
+/* Styles de base pour le corps et les polices */
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Style des champs de commentaire et de réponse */
+.comment-fieldset, .commentaire, #reply-form {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.comment-fieldset legend, .commentaire input[type='text'] {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.commentaire input[type='text'], #reply-form input[type='text'] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.commentaire input[type='submit'], #reply-form input[type='submit'] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.commentaire input[type='submit']:hover, #reply-form input[type='submit']:hover {
+    background-color: #0056b3;
+}
+
+/* Style des réponses */
+fieldset[style*="margin-left"] {
+    background-color: #e9ecef;
+    border-radius: 8px;
+}
+
+/* Boutons de réponse */
+button {
+    background-color: #28a745;
+    color: white;
+    border: 2px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.toggle-reply {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.toggle-reply:hover {
+    background-color: #0056b3;
+}
+
+.replies-container {
+    border-top: 1px solid #ddd;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+/* Styles pour les commentaires */
+.comment-fieldset {
+    background-color: #f9f9f9; /* Couleur de fond légère */
+    border: 2px solid #ddd; /* Bordure subtile */
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre portée */
+    padding: 15px; /* Espacement interne */
+    margin-bottom: 15px; /* Espacement externe */
+}
+
+.comment-fieldset legend {
+    font-weight: bold; /* Police en gras pour le titre */
+    color: #007bff; /* Couleur pour le titre */
+}
+
+/* Styles pour les réponses */
+.replies-container {
+    background-color: #ffffff; /* Couleur de fond différente pour les réponses */
+    border-left: 3px solid #007bff; /* Ligne verticale pour indiquer une réponse */
+    margin-left: 20px; /* Décalage à gauche pour la hiérarchie */
+    padding: 10px; /* Espacement interne */
+}
+
+.replies-container fieldset {
+    border-color: #eee; /* Bordure plus légère pour les réponses */
+    background-color: #f9f9f9;
+}
+
+.comment-fieldset i, .replies-container i {
+    font-size: 0.75em; /* Réduit la taille de la police de moitié */
+}
+
+.delete-btn {
+    background-color: white;
+    color: red;
+    border: 2px solid red;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+    margin-right: 10px;
+}
+
+.delete-btn:hover {
+    background-color: darkred;
+    color: white;
+}
+
+.delete-btn img {
+    width: 16px;
+    height: 16px;
+    text-align: center;
+}
