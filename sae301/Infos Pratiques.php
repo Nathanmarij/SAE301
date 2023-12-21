@@ -44,7 +44,6 @@
             </div>
             </div>
 
-
             <div class="btn-compte">
                 <!-- Boutons d'inscription et de connexion -->
                 <?php
@@ -65,8 +64,6 @@
                     </a>
                     <?php
                 } ?>
-
-
             </div>
         </div>
     </header>

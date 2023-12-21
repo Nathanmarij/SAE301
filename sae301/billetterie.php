@@ -31,27 +31,27 @@
 </head>
 
 <body>
-<header>
+    <header>
         <div class="header">
             <div class="logo">
-            <a href="index.php">
-            <!-- Logo -->
-            <img src="image/logo.png" alt="UNICEF logo">
-            </a>
+                <a href="index.php">
+                    <!-- Logo -->
+                    <img src="image/logo.png" alt="UNICEF logo">
+                </a>
             </div>
             <div class="nav-container">
-            <div class="btn-nav">
-                <!-- Boutons de navigation -->
-                <a href="billetterie.php">
-                    <h2>Billetterie</h2>
-                </a>
-                <a href="forum.php">
-                    <h2>Forum</h2>
-                </a>
-                <a href="Infos Pratiques.php">
-                    <h2>Infos Pratiques</h2>
-                </a>
-            </div>
+                <div class="btn-nav">
+                    <!-- Boutons de navigation -->
+                    <a href="billetterie.php">
+                        <h2>Billetterie</h2>
+                    </a>
+                    <a href="forum.php">
+                        <h2>Forum</h2>
+                    </a>
+                    <a href="Infos Pratiques.php">
+                        <h2>Infos Pratiques</h2>
+                    </a>
+                </div>
             </div>
 
             <div class="btn-compte">
@@ -80,7 +80,7 @@
 
     <section class="billeterie">
         <article class="billet">
-        <h3>AM</h3>
+            <h3>AM</h3>
             <h5>20€</h5>
             <p>Tout les concerts de 13h à 17h</p>
             <label for="quantite-billet1">Quantité:</label>

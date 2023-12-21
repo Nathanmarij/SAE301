@@ -83,8 +83,8 @@ try {
             </div>
             <div class="carousel-images">
                 <img src="image/image1.jpg" alt="img1">
-                <img src="image/image4.png" alt="img2">
-                <img src="image/image3.jpg" alt="img3">
+                <img src="image/image2.jpg" alt="img2">
+                <img src="image/image4.png" alt="img3">
             </div>
             <button class="previous" onclick="moveSlides(-1)"><i class="fa fa-chevron-left"></i></button>
             <div class="carousel-dots">
@@ -205,8 +205,6 @@ try {
             
             </script>
 
-            <!-- --------------------------------------- -->
-
         </div>
     </div>
 
@@ -226,6 +224,7 @@ try {
                         <a href="billetterie.php"> Billeterie </a> <br>
                         <a href="forum.php"> Communautée </a> <br>
                         <a href="Infos Pratiques.php"> Infos Pratiques </a> <br>
+                        <a href="mention.php"> Mentions Légales</a> <br>
                     </div>
 
                     <div class="margeheuu">
