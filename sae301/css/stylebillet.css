@@ -45,7 +45,7 @@ body {
 }
 
 .billeterie {
-    background-color: rgb(69, 201, 216);
+    background-color: rgb(255, 255, 255);
     /* Ajuster l'opacité si nécessaire */
 
     display: flex;
@@ -112,7 +112,7 @@ body {
 
 /* Effet de lueur externe */
 .billet {
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
 }
 
 /* Effet de reflet brillant */
