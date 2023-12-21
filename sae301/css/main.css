@@ -7,7 +7,7 @@
     display: flex;
     align-items: center; /* Centre verticalement le contenu */
     justify-content: center; /* Centre horizontalement le contenu */
-    height: 100vh; /* Hauteur totale de la vue, ajustez selon vos besoins */
+    height: 60em; /* Hauteur totale de la vue, ajustez selon vos besoins */
     overflow: hidden; /* Empêche le pseudo-élément de déborder */
 }
 
@@ -15,12 +15,11 @@
     content: '';
     background: url('../image/unicef.png') no-repeat center center; /* Ajustez le chemin si nécessaire */
     background-size: 75%; /* Ajustez la taille de l'image ici */
-    opacity: 0.15; /* Opacité de 15% */
     position: absolute;
-    top: 50px;
-    left: 0;
-    bottom: 0;
-    right: 0;
+    top: -15em;
+    left: -15em;
+    bottom: -15em;
+    right: -15em;
     z-index: 1; /* Place l'image de fond derrière le contenu */
 }
 
@@ -49,12 +48,15 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); /* Centrage parfait dans .histoire */
+    margin-left: 2em ;
+    margin-right: 2em;
 }
 
 .textimg p {
     font-size: 1.25vw; /* Ajustez la taille selon la largeur de l'écran */
     margin-bottom: 2rem; /* Espace entre le texte et l'image si nécessaire */
-    max-width: 50%; /* Maximum 60% du conteneur .textimg */
+    max-width: 22em;
+    font-size: 1.3em;
 }
 
 .textimg img {
@@ -74,19 +76,35 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    margin-left: 2em;
+    margin-right: 2em;
 }
 
 .ytbr {
-    padding-bottom:2em;
+    padding-bottom:1em;
     padding-left:2em;
     padding-right:2em;
-    padding-top: 16em;
+    padding-top: 13.5em;
     border-radius: 2em;
-    width:13em;
+    width: 14em;
     text-align: center;
     margin:1em;
     color: white;
+    font-size: 1.2em;
+    font-family: 'Kumbh Sans', sans-serif;
+    background-size: 107%; 
+    border: none;
 }
+
+.ytbr:hover {
+    padding-bottom:1.1em;
+    padding-left: 2.2em;
+    padding-right: 2.2em;
+    padding-top: 13.7em;
+    background-size: 120%; 
+    transition: padding 1s, background-size 1s;
+}
+
 
 .inox {
     background-image: url("../image/inox.png");
@@ -123,8 +141,8 @@
 
 .reserv {
     text-align: center;
-    margin-top: 10em;
-    margin-bottom: 10em;
+    margin-top: 16em;
+    margin-bottom: 20em;
 }
 
 .btn-reserv {
@@ -153,31 +171,40 @@
 
 footer {
     background-color: #1E1E1E;
+    color: white;
+    text-align: left;
+    padding-top: 6em;
+    padding-bottom: 2em;
+}
+
+.premierepartie {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+}
+
+.premierepartie .illustration {
+    margin-top: 1em;
+    width: 33em;
+    height:30em;
+    margin-left: -10em;
+}
+
+.premierepartie a {
     color: white;
-    text-align: left;
-    padding-top: 3em;
-    padding-bottom: 3em;
+    text-decoration: none;
 }
 
-footer img {
-    width: 35em;
-}
-
-footer a {
-    color: white;
-}
-
-footer .img img {
-    width: 3em;
+.premierepartie .img img {
+    width: 3.4em;
+    margin: 0.2em;
 }
 
 .liens {
     display: flex;
     justify-content: start;
     flex-wrap: wrap;
+    margin-bottom: 3em;
 }
 
 .reseaux{
@@ -187,7 +214,8 @@ footer .img img {
 }
 
 footer h2 {
-    font-size: 2em;;
+    font-size: 2em;
+    font-family: 'Kumbh Sans', sans-serif;
 }
 
 footer a {
@@ -198,10 +226,32 @@ footer a {
     margin-left: 8em;
 }
 
+.margeheuu div {
+    margin-left: -5em;
+}
+
 
 footer p {
     text-align: center;
 }
+
+.deuxiemepartie {
+    margin-top: 3em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.deuxiemepartie img {
+    height: 4.2em;
+    margin-left: 2em;
+    margin-right: -8em;
+}
+
+.deuxiemepartie p {
+    margin-top: 4em;
+    margin-bottom: -2em;
+}
+
 
 /* Responsive */
 
@@ -259,3 +309,72 @@ footer p {
     }
 
 }
+
+
+
+/* Styles for the popup */
+.popup1 {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 3;
+  }
+
+  .popup2 {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 3;
+  }
+
+  .popup3 {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 3;
+  }
+
+  .popup4 {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 3;
+  }
+  
+  .popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 2em;
+    text-align: center;
+  }
+  
+  .close {
+    position: absolute;
+    top: 0.2em;
+    right: 0.5em;
+    cursor: pointer;
+    font-size: 24px;
+  }
+
+ .popup-content img {
+    height: 40em;
+ }
