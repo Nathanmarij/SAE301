@@ -83,7 +83,7 @@ try {
             </div>
             <div class="carousel-images">
                 <img src="image/image1.jpg" alt="img1">
-                <img src="image/image2.jpg" alt="img2">
+                <img src="image/image4.png" alt="img2">
                 <img src="image/image3.jpg" alt="img3">
             </div>
             <button class="previous" onclick="moveSlides(-1)"><i class="fa fa-chevron-left"></i></button>
