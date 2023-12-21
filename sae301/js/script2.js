@@ -21,3 +21,12 @@ document.addEventListener('DOMContentLoaded', function() {
         billet.addEventListener('mouseleave', removeEffects);
     });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const burgerIcon = document.getElementById('burger-icon');
+    const menuItems = document.getElementById('menu-items');
+
+    burgerIcon.addEventListener('click', function () {
+        menuItems.classList.toggle('show');
+    });
+});

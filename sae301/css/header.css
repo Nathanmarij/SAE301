@@ -95,3 +95,13 @@ html, body {
 
 
 
+.youtubers {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ytbr {
+    background-color: #1cabe2;
+    padding: 15%;
+    border-radius: 15%;
+}

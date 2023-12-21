@@ -94,6 +94,17 @@ body {
     justify-content: center;
 }
 
+.youtubers {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ytbr {
+    background-color: #1cabe2;
+    padding: 15%;
+    border-radius: 15%;
+}
+
 /* Billeterie */
 
 .billeterie {
@@ -130,4 +141,3 @@ body {
     padding: 2vh;
     border-radius: 5%;
 }
-
