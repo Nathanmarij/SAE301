@@ -16,149 +16,32 @@ body {
     /* Empêche le défilement horizontal si le contenu dépasse la largeur de la fenêtre */
 }
 
-.header {
+.navigation {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    background-color: #ffffff;
-    padding: 10px;
-    height: 50px;
-    margin-bottom: 10px;
+    background-color: #1cabe2;
 }
 
-.logo {
-    margin-top: 15px;
-    flex: 0 0 auto;
-    /* Empêche le logo de se redimensionner */
-}
-
-/* Logo à gauche */
-.logo img {
-    height: 70px;
-    /* Adjust as needed */
-    left: 0%;
-}
-
-/* Boutons de navigation principaux centrés */
-.btn-nav:first-of-type {
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
+.navigation > ol {
     display: flex;
-    gap: 30px;
-    /* Existing gap */
-    flex-wrap: wrap;
-    /* Allows items to wrap onto the next line */
-    max-width: 600px;
-    /* Largeur maximale pour maintenir les boutons centrés */
+    justify-content: center;
+    height: 5em;
 }
 
-.btn-nav a {
+.navigation > ol > a {
+    margin-left: 2vh;
+    margin-right: 2vh;
     text-decoration: none;
-    color: #000000;
-    font-size: 16px;
-    padding: 5px 10px;
-    /* Add padding around the links */
-    margin: 5px;
-    /* Add margin around the links */
-    display: inline-block;
-    position: relative;
+    color: white;
 }
 
-.btn-nav a:hover {
-    color: #1cabe2;
-    /* Change text color for better visibility */
+.navigation > ol > a:active {
+    color: black;
+    border-bottom: 0.8vh solid black;
 }
 
-.btn-nav a:hover::after,
-.btn-nav a:focus::after {
-    content: '';
-    display: flex;
-    height: 2px;
-    /* Height of the colored bar, adjust as needed */
-    width: 100%;
-    /* Full width of the text */
-    background-color: #1cabe2;
-    /* The color of the bar */
-    position: absolute;
-    /* Absolute position the pseudo-element relative to the link */
-    bottom: 0;
-    /* Align it to the bottom of the link */
-    left: 0;
-    /* Align it to the left of the link */
-}
-
-/* Boutons d'inscription et de connexion à droite */
-.btn-nav:last-of-type {
-    margin-left: auto;
-    /* Pousse les boutons vers la droite */
-    display: flex;
-    gap: 30px;
-    /* Existing gap */
-    flex-wrap: wrap;
-    /* Allows items to wrap onto the next line */
-}
-
-@media (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .btn-nav {
-        position: static;
-        transform: none;
-        flex-direction: row;
-        justify-content: center;
-        width: 100%;
-        gap: 10px;
-        /* Smaller gap for smaller screens */
-    }
-}
-
-
-.btn-nav a:hover {
-    color: #1cabe2;
-}
-
-.btn-nav a:hover::after,
-.btn-nav a:focus::after {
-    content: '';
-    display: flex;
-    height: 2px;
-    width: 100%;
-    background-color: #1cabe2;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
-
-
-
-/* En-tête */
-header {
-    background-color: #ffffff;
-    /* Couleur de fond blanche */
-}
-
-.header div {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-}
-
-/* Logo */
-.logo img {
-    height: 50px;
-    /* Réglage de la taille du logo */
-}
-
-/* Navigation principale */
-.navbar,
-.compte {
-    display: flex;
-    align-items: center;
+.navigation .boutonnav {
+    margin-left: 13vw;
 }
 
 .billeterie {
@@ -223,7 +106,7 @@ header {
 /* Styles CSS supplémentaires pour la classe 'billet' */
 
 .billet {
-    transition: transform 4s ease; // Transition plus lente
+    transition: transform 4s ease;
     transform-style: preserve-3d;
 }
 
@@ -335,3 +218,100 @@ header {
     margin-top: 20px;
     font-weight: bold;
 }
+
+.burger-menu {
+    display: none;
+
+    padding: 15px;
+    background-color: rgb(128, 128, 128, 0.7);
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+}
+
+.burger-icon {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.bar {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 1023px) {
+
+    .navigation h2 {
+        font-size: medium;
+    }
+
+    .navigation > ol {
+        height: 3em;
+    }
+
+    .billeterie {
+        flex-direction: column;
+        align-items: center;
+    }
+    .billet {
+     padding: 8vh;
+    }
+ }
+
+
+
+ @media screen and (max-width: 767px) {
+
+    .navigation > ol {
+        display: none;
+    }
+
+    .billeterie {
+        padding-top: 20vh;
+        flex-direction: column;
+        align-items: center;
+    }
+    .billet {
+     padding: 4vh;
+    }
+
+    .burger-menu {
+        display: flex;
+        justify-content: center;
+    }
+
+    .menu-items {
+        display:none;
+        list-style: none;
+        align-items: center;
+    }
+
+    .menu-items ol {
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+    }
+
+    .menu-items.show {
+        display: flex;
+        flex-direction: column;
+        height: 87vh;
+    }
+
+    .menu-items h2 {
+        text-align: center;
+        color: white;
+        text-decoration: none;
+    }
+
+    .navigation .boutonnav {
+        margin-left: initial;
+    }
+
+
+ }
