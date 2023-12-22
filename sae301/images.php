@@ -17,7 +17,7 @@ try {
     <link href="css/image.css" type="text/css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
     <script src="js/forum.js"></script>
-    <title>forum</title>
+    <title>images</title>
 </head>
 <body>
 <header>
@@ -69,7 +69,6 @@ if (isset($_SESSION["user"])) { ?>
 <input type="file" name="limage" />(<i> *.jpg *.png</i>)</p>
 <input type="submit" name="BtnSubmit" value="Envoyer" id="envoie">
 </form>
-
 <?php }
 else {?>
             <div class="seco">Vous devez &nbsp;<a href="connexion.php">vous connecter</a>&nbsp; pour poster des images</div>
@@ -103,11 +102,12 @@ foreach ($img as $val) {
 
     echo "<i>Posté le " . $formattedDate . "</i><br>";
 
-    if (isset($_SESSION["user"]) && $_SESSION["user"] == $val["id_user"]) {
-        echo '<button class="delete-btn" onclick="deleteImage(' . $val['id_image'] . ')"><img src="image/poubelle.png" alt="Supprimer"></button>';
+    if (isset($_SESSION["user"]) && $_SESSION["user"] == $val["id_user"]) {?>
+        <a href="supImage.php?id=<?php echo $val["id_image"]; ?>">
+        <button class="delete-btn" onclick="deleteImage('<?php $val['id_image']?> ')"><img src="image/poubelle.png" alt="Supprimer"></button></a><?php
     }
-
-    echo '</fieldset>';
+    ?> </fieldset>
+    <?php
 }
 ?>
 </div>
