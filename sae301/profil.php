@@ -90,26 +90,53 @@ elseif ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link href="css/profil.css" type="text/css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
     <script src="js/profil.js"></script>
+    <link rel="icon" href="favicon.ico">
     <title>Profil</title>
 </head>
 <body>
-    <header>
+<header>
         <div class="header">
-            <div class="btn-nav navbar">
-                <!-- Boutons de navigation -->
-                <a href="billeterie.php"><h2>Billetterie</h2></a>
-                <a href="forum.php"><h2>Forum</h2></a>
-                <a href="#interventions"><h2>Contact</h2></a>
-            </div>
             <div class="logo">
-                <!-- Logo -->
-                <img src="image/logo.png" alt="UNICEF logo">
+            <a href="index.php">
+            <!-- Logo -->
+            <img src="image/logo.png" alt="UNICEF logo">
+            </a>
             </div>
-            <div class="btn-nav compte">
-            <?php
-            if (isset($_SESSION["user"])) { // si l'utilisateur est connecté
-                echo '<a href="index.php"><h2>Menu Principal</h2></a>';
-            } ?>
+            <div class="nav-container">
+            <div class="btn-nav">
+                <!-- Boutons de navigation -->
+                <a href="billetterie.php">
+                    <h2>Billetterie</h2>
+                </a>
+                <a href="forum.php">
+                    <h2>Forum</h2>
+                </a>
+                <a href="infosPratiques.php">
+                    <h2>Infos Pratiques</h2>
+                </a>
+            </div>
+            </div>
+
+            <div class="btn-compte">
+                <!-- Boutons d'inscription et de connexion -->
+                <?php
+                if (isset($_SESSION["user"])) { // si l'utilisateur est connecté
+                    $requete = 'SELECT id_user, nom, prenom FROM user WHERE id_user = :id';
+                    $statement = $bdd->prepare($requete);
+                    $statement->bindParam(':id', $iduser, PDO::PARAM_INT);
+                    $statement->execute();
+                    $identite = $statement->fetchAll(PDO::FETCH_ASSOC);
+                    $iduser = $_SESSION["user"];
+                    echo '<a href="index.php"><h2>Home</h2></a>';
+                } else { ?>
+                    <a href="inscription.php">
+                        <h2>Inscription</h2>
+                    </a>
+                    <a href="connexion.php">
+                        <h2>Connexion</h2>
+                    </a>
+                    <?php
+                } ?>
             </div>
         </div>
     </header>
@@ -161,7 +188,7 @@ elseif ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div><br>
     <?php
     if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == 1) {
-        ?><a href="promouvoirAdmin.php" class="btn-deconnexion">Droits Admin</a><?php
+        ?><a href="administration.php" class="btn-admin">Droits Admin</a><?php
     }
     ?>
 </body>

@@ -5,10 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
-    <link href="css/header.css" type="text/css" rel="stylesheet" />
     <link href="css/stylebillet.css" type="text/css" rel="stylesheet" />
     <script src="js/script2.js"></script>
-    <script src="js/billetterie.js"></script>
+    <link rel="icon" href="favicon.ico">
     <title>Unicert 2024 - Billeterie</title>
     <?php
 include ("config.php");
@@ -32,47 +31,7 @@ $identite = $statement->fetchAll(PDO::FETCH_ASSOC);
 </head>
 
 <body>
-<header>
-        <div class="header">
-            <div class="btn-nav navbar">
-                <!-- Boutons de navigation -->
-                <a href="#actions"><h2>Billetterie</h2></a>
-                <a href="forum.php"><h2>Forum</h2></a>
-                <a href="#interventions"><h2>Contact</h2></a>
-            </div>
-            <div class="logo">
-                <!-- Logo -->
-                <img src="image/logo.png" alt="UNICEF logo">
-            </div>
-            <div class="btn-nav compte">
-                <!-- Boutons d'inscription et de connexion --><?php
-                 if (isset($_SESSION["user"])) { // si l'utilisateur est connecté
-                    $requete = 'SELECT id_user, nom, prenom FROM user WHERE id_user = :id';
-                    $statement = $bdd->prepare($requete);
-                    $statement->bindParam(':id', $iduser, PDO::PARAM_INT);
-                    $statement->execute();
-                    $identite = $statement->fetchAll(PDO::FETCH_ASSOC);
-                $iduser=$_SESSION["user"];
-                echo '<a href="deconnexion.php"><h2>Déconnexion</h2></a>';}
-                else {?>
-                <a href="inscription.php"><h2>Inscription</h2></a>
-                <a href="connexion.php"><h2>Connexion</h2></a><?php
-                }?>
-
-
-            </div>
-        </div>
-    </header>
-    <div class="background">
-    <p>        
-    <?php
-    if (isset ($_SESSION['data'])){
-    echo $_SESSION['data'];
-    }
-    else {
-        echo '';
-    }
-    ?></p>
+<?php include("header.php"); ?>
     <section class="billeterie">
         <article class="billet">
             <h3>Billet 1</h3>

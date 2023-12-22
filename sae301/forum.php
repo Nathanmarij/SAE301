@@ -1,52 +1,35 @@
 <?php
 include("config.php");
 session_start();
+try {
+    $bdd = new PDO('mysql:host='.$hote.';port='.$port.';dbname='.$nombase, $utilisateur, $mdp);
+} catch (Exception $e) {
+    die("erreur");
+}
 ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/header.css" type="text/css" rel="stylesheet" />
     <link href="css/forum.css" type="text/css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
     <script src="js/forum.js"></script>
+    <link rel="icon" href="favicon.ico">
     <title>forum</title>
 </head>
 <body>
-    <header>
-        <div class="header">
-            <div class="btn-nav navbar">
-                <!-- Boutons de navigation -->
-                <a href="billeterie.php"><h2>Billetterie</h2></a>
-                <a href="forum.php"><h2>Forum</h2></a>
-                <a href="#interventions"><h2>Contact</h2></a>
-            </div>
-            <div class="logo">
-                <!-- Logo -->
-                <img src="image/logo.png" alt="UNICEF logo">
-            </div>
-            <div class="btn-nav compte">
-            <?php
-            if (isset($_SESSION["user"])) { // si l'utilisateur est connecté
-                echo '<a href="profil.php"><h2>Profil</h2></a>';
-            } else { ?>
-                <a href="inscription.php"><h2>Inscription</h2></a>
-                <a href="connexion.php"><h2>Connexion</h2></a><?php
-            }?>
-            </div>
-        </div>
-    </header>
+    <?php include("header.php"); ?>
+    <div class="nav-tabs">
+        <a href="forum.php" class="tab active">Forum</a>
+        <span class="separator">|</span>
+        <a href="images.php" class="tab">Images</a>
+    </div> 
     <div class="container">
     <?php
     date_default_timezone_set('Europe/Paris');
     setlocale(LC_TIME, 'fr_FR.UTF-8', 'French_France.1252');
 
-    try {
-        $bdd = new PDO('mysql:host='.$hote.';port='.$port.';dbname='.$nombase, $utilisateur, $mdp);
-    } catch (Exception $e) {
-        die("erreur");
-    }
 
     function getForumComments($bdd) {
         $requete = 'SELECT id_ask, id_user, content, date_posted FROM forum ORDER BY id_ask DESC';
@@ -82,7 +65,7 @@ session_start();
     ];
 
     foreach ($forum as $val) {
-        $requete = 'SELECT nom, prenom FROM user WHERE id_user = :id_user';
+        $requete = 'SELECT nom, prenom, isAdmin FROM user WHERE id_user = :id_user';
         $statement = $bdd->prepare($requete);
         $statement->bindValue(':id_user', $val["id_user"], PDO::PARAM_INT);
         $statement->execute();
@@ -90,6 +73,12 @@ session_start();
 
         echo '<fieldset class="comment-fieldset"><legend><b>';
         echo htmlspecialchars($commentateur["prenom"]) . " " . htmlspecialchars($commentateur["nom"]);
+
+        // Afficher le badge si l'utilisateur est un administrateur
+        if ($commentateur["isAdmin"] == 1) {
+            echo ' <img src="image/badge.png" width="20px" style="vertical-align: middle;">';
+        }
+
         echo "</b></legend>";
         echo htmlspecialchars($val["content"]);
         echo "<br>";
@@ -122,8 +111,14 @@ session_start();
             echo '<div class="replies-container" id="replies-' . $val['id_ask'] . '" style="display: none;">';
 
             foreach ($reponses as $reponse) {
-                echo '<fieldset style="margin-left: 20px;">';
-                echo '<legend>Réponse de <b>' . htmlspecialchars($reponse['prenom']) . ' ' . htmlspecialchars($reponse['nom']) . '</b></legend>';
+                echo '<fieldset>';
+                echo '<legend>Réponse de <b>' . htmlspecialchars($reponse['prenom']) . ' ' . htmlspecialchars($reponse['nom']);
+
+                if ($commentateur["isAdmin"] == 1) {
+                    echo ' <img src="image/badge.png" width="20px" style="vertical-align: middle;">';
+                }
+
+                echo '</b></legend>';
                 echo htmlspecialchars($reponse['contenu']);
 
                 $dateReponse = new DateTime($reponse["date_posted"]);
@@ -133,12 +128,13 @@ session_start();
 
                 echo "<i><br>Posté le " . $formattedDateReponse . "</i><br>";
 
-            if (isset($_SESSION["isAdmin"]) && $_SESSION["isAdmin"] == 1 || (isset($_SESSION["user"]) && $_SESSION["user"] == $reponse["id_user"])) {
-                echo '<button class="delete-btn" onclick="deleteResponse(' . $reponse['id_reponse'] . ')"><img src="image/poubelle.png" alt="Supprimer"></button>';
-            }
+                if (isset($_SESSION["isAdmin"]) && $_SESSION["isAdmin"] == 1 || (isset($_SESSION["user"]) && $_SESSION["user"] == $reponse["id_user"])) {
+                    echo '<button class="delete-btn" onclick="deleteResponse(' . $reponse['id_reponse'] . ')"><img src="image/poubelle.png" alt="Supprimer"></button>';
+                }
+
                 echo '</fieldset>';
             }
-            echo '</div>'; // Fin du conteneur des réponses
+            echo '</div>';
         }
 
         echo '</fieldset>';

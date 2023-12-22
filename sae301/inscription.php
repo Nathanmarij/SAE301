@@ -8,6 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="css/conins.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico">
 </head>
 
 <body>
