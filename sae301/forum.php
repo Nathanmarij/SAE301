@@ -19,6 +19,11 @@ try {
 </head>
 <body>
     <?php include("header.php"); ?>
+    <div class="nav-tabs">
+        <a href="forum.php" class="tab active">Forum</a>
+        <span class="separator">|</span>
+        <a href="images.php" class="tab">Images</a>
+    </div> 
     <div class="container">
     <?php
     date_default_timezone_set('Europe/Paris');
