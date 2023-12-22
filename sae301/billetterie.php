@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
     <link href="css/stylebillet.css" type="text/css" rel="stylesheet" />
     <script src="js/script2.js"></script>
+    <link rel="icon" href="favicon.ico">
     <title>Unicert 2024 - Billeterie</title>
     <?php
     include("config.php");

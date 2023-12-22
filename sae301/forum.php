@@ -15,6 +15,7 @@ try {
     <link href="css/forum.css" type="text/css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
     <script src="js/forum.js"></script>
+    <link rel="icon" href="favicon.ico">
     <title>forum</title>
 </head>
 <body>

@@ -90,6 +90,7 @@ elseif ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link href="css/profil.css" type="text/css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
     <script src="js/profil.js"></script>
+    <link rel="icon" href="favicon.ico">
     <title>Profil</title>
 </head>
 <body>

@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700;900&display=swap" rel="stylesheet">
     <script src="js/carousel.js"></script>
+    <link rel="icon" href="favicon.ico">
     <title>Unicert 2024</title>
     <?php
 include ("config.php");
