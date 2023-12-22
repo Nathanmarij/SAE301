@@ -39,7 +39,7 @@ try {
                 <a href="forum.php">
                     <h2>Forum</h2>
                 </a>
-                <a href="Infos Pratiques.php">
+                <a href="infosPratiques.php">
                     <h2>Infos Pratiques</h2>
                 </a>
             </div>
@@ -56,7 +56,7 @@ try {
                     $statement->execute();
                     $identite = $statement->fetchAll(PDO::FETCH_ASSOC);
                     $iduser = $_SESSION["user"];
-                    echo '<a href="deconnexion.php"><h2>Déconnexion</h2></a>';
+                    echo '<a href="profil.php"><h2>Profil</h2></a>';
                 } else { ?>
                     <a href="inscription.php">
                         <h2>Inscription</h2>
