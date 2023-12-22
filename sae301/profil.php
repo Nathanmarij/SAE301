@@ -24,62 +24,6 @@ try {
 } catch (Exception $e) {
     die("Erreur : " . $e->getMessage());
 }
-
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['verifier_mdp'])) {
-    $ancien_mdp = $_POST["ancien_mdp"];
-    $requete = $bdd->prepare("SELECT mdp FROM user WHERE id_user = :id_user");
-    $requete->bindParam(':id_user', $iduser, PDO::PARAM_INT);
-    $requete->execute();
-    $resultat = $requete->fetch(PDO::FETCH_ASSOC);
-
-    if (password_verify($ancien_mdp, $resultat['mdp'])) {
-        $message = "";
-        echo "<script>document.addEventListener('DOMContentLoaded', function() { document.getElementById('change-password-section').style.display = 'block'; });</script>";
-    } else {
-        $message = "L'ancien mot de passe est incorrect.";
-    }
-} 
-
-elseif ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Mise à jour des autres informations
-    $nom = $_POST["nom"];
-    $prenom = $_POST["prenom"];
-    $mail = $_POST["mail"];
-    $nouveau_mdp = password_hash($_POST["nouveau_mdp"], PASSWORD_DEFAULT);
-
-    if (!empty($_POST['nom'])) {
-        $requete = $bdd->prepare("UPDATE user SET nom = :nom WHERE id_user = :id_user");
-        $requete->bindParam(':nom', $nom);
-        $requete->bindParam(':id_user', $iduser, PDO::PARAM_INT);
-        $requete->execute();
-        echo "Votre nom a bien été mis à jour.";
-    }
-    
-    if (!empty($_POST['prenom'])) {
-        $requete = $bdd->prepare("UPDATE user SET prenom = :prenom WHERE id_user = :id_user");
-        $requete->bindParam(':prenom', $prenom);
-        $requete->bindParam(':id_user', $iduser, PDO::PARAM_INT);
-        $requete->execute();
-        echo "Votre prénom a bien été mis à jour.";
-    }
-    
-    if (!empty($_POST['mail'])) {
-        $requete = $bdd->prepare("UPDATE user SET mail = :mail WHERE id_user = :id_user");
-        $requete->bindParam(':mail', $mail);
-        $requete->bindParam(':id_user', $iduser, PDO::PARAM_INT);
-        $requete->execute();
-        echo "Votre adresse email a bien été mise à jour.";
-    }
-    
-    if (!empty($_POST['nouveau_mdp']) && !empty($_POST['confirmer_mdp']) && $_POST['nouveau_mdp'] === $_POST['confirmer_mdp']) {
-        $requete = $bdd->prepare("UPDATE user SET mdp = :mdp WHERE id_user = :id_user");
-        $requete->bindParam(':mdp', $nouveau_mdp);
-        $requete->bindParam(':id_user', $iduser, PDO::PARAM_INT);
-        $requete->execute();
-        echo "Votre mot de passe a bien été mis à jour.";
-    }
-    
-}
 ?>
 
 <!DOCTYPE html>
@@ -140,6 +84,62 @@ elseif ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
         </div>
     </header>
+    <?php if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['verifier_mdp'])) {
+    $ancien_mdp = $_POST["ancien_mdp"];
+    $requete = $bdd->prepare("SELECT mdp FROM user WHERE id_user = :id_user");
+    $requete->bindParam(':id_user', $iduser, PDO::PARAM_INT);
+    $requete->execute();
+    $resultat = $requete->fetch(PDO::FETCH_ASSOC);
+
+    if (password_verify($ancien_mdp, $resultat['mdp'])) {
+        $message = "";
+        echo "<script>document.addEventListener('DOMContentLoaded', function() { document.getElementById('change-password-section').style.display = 'block'; });</script>";
+    } else {
+        $message = "L'ancien mot de passe est incorrect.<br>";
+    }
+} 
+
+elseif ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Mise à jour des autres informations
+    $nom = $_POST["nom"];
+    $prenom = $_POST["prenom"];
+    $mail = $_POST["mail"];
+    $nouveau_mdp = password_hash($_POST["nouveau_mdp"], PASSWORD_DEFAULT);
+
+    if (!empty($_POST['nom'])) {
+        $requete = $bdd->prepare("UPDATE user SET nom = :nom WHERE id_user = :id_user");
+        $requete->bindParam(':nom', $nom);
+        $requete->bindParam(':id_user', $iduser, PDO::PARAM_INT);
+        $requete->execute();
+        echo "Votre <b>nom</b> a bien été mis à jour.<br>";
+    }
+    
+    if (!empty($_POST['prenom'])) {
+        $requete = $bdd->prepare("UPDATE user SET prenom = :prenom WHERE id_user = :id_user");
+        $requete->bindParam(':prenom', $prenom);
+        $requete->bindParam(':id_user', $iduser, PDO::PARAM_INT);
+        $requete->execute();
+        echo "Votre <b>prénom</b> a bien été mis à jour.<br>";
+    }
+    
+    if (!empty($_POST['mail'])) {
+        $requete = $bdd->prepare("UPDATE user SET mail = :mail WHERE id_user = :id_user");
+        $requete->bindParam(':mail', $mail);
+        $requete->bindParam(':id_user', $iduser, PDO::PARAM_INT);
+        $requete->execute();
+        echo "Votre <b>adresse mail</b> a bien été mise à jour.<br>";
+    }
+    
+    if (!empty($_POST['nouveau_mdp']) && !empty($_POST['confirmer_mdp']) && $_POST['nouveau_mdp'] === $_POST['confirmer_mdp']) {
+        $requete = $bdd->prepare("UPDATE user SET mdp = :mdp WHERE id_user = :id_user");
+        $requete->bindParam(':mdp', $nouveau_mdp);
+        $requete->bindParam(':id_user', $iduser, PDO::PARAM_INT);
+        $requete->execute();
+        echo "Votre <b>mot de passe</b> a bien été mis à jour.<br>";
+    }
+    
+}
+?>
     <h1>Modifier votre profil</h1>
     <?php if ($message != "") echo "<p>$message</p>"; ?>
     <form method="post" action="profil.php">

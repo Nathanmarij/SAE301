@@ -116,7 +116,7 @@ try {
             <a href="">Supprimer le cinqième artiste</a>
             </form>
         </article>
-        <form action="promouvoirAdmin.php" method="post">
+        <form action="administration.php" method="post">
         <h1>Promouvoir quelqu'un Admin</h1>
             <input type="email" name="email" placeholder="Entrez l'email de l'utilisateur">
             <input type="submit" value="Promouvoir comme Admin">

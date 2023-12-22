@@ -20,37 +20,12 @@ try {
     <title>images</title>
 </head>
 <body>
-<header>
-        <div class="header">
-            <div class="btn-nav navbar">
-                <!-- Boutons de navigation -->
-                <a href="#actions"><h2>Billetterie</h2></a>
-                <a href="forum.php"><h2>Forum</h2></a>
-                <a href="#interventions"><h2>Contact</h2></a>
-            </div>
-            <div class="logo">
-                <!-- Logo -->
-                <img src="image/logo.png" alt="UNICEF logo">
-            </div>
-            <div class="btn-nav compte">
-                <!-- Boutons d'inscription et de connexion --><?php
-                 if (isset($_SESSION["user"])) { // si l'utilisateur est connecté
-                    $requete = 'SELECT id_user, nom, prenom FROM user WHERE id_user = :id';
-                    $statement = $bdd->prepare($requete);
-                    $statement->bindParam(':id', $iduser, PDO::PARAM_INT);
-                    $statement->execute();
-                    $identite = $statement->fetchAll(PDO::FETCH_ASSOC);
-                $iduser=$_SESSION["user"];
-                echo '<a href="deconnexion.php"><h2>Déconnexion</h2></a>';}
-                else {?>
-                <a href="inscription.php"><h2>Inscription</h2></a>
-                <a href="connexion.php"><h2>Connexion</h2></a><?php
-                }?>
-
-
-            </div>
-        </div>
-    </header>
+<?php include("header.php"); ?>
+    <div class="nav-tabs">
+        <a href="forum.php" class="tab">Forum</a>
+        <span class="separator">|</span>
+        <a href="images.php" class="tab active">Images</a>
+    </div> 
     <div class="container">
 <?php
 function getImages($bdd) {
@@ -83,7 +58,7 @@ $months = [
 ];
 
 foreach ($img as $val) {
-    $requete = 'SELECT nom, prenom FROM user WHERE id_user = :id_user';
+    $requete = 'SELECT nom, prenom, isAdmin FROM user WHERE id_user = :id_user';
     $statement = $bdd->prepare($requete);
     $statement->bindValue(':id_user', $val["id_user"], PDO::PARAM_INT);
     $statement->execute();
@@ -91,6 +66,10 @@ foreach ($img as $val) {
 
     echo '<fieldset class="image-fieldset"><legend><b>';
     echo htmlspecialchars($commentateur["prenom"]) . " " . htmlspecialchars($commentateur["nom"]);
+    // Afficher le badge si l'utilisateur est un administrateur
+    if ($commentateur["isAdmin"] == 1) {
+        echo ' <img src="image/badge.png" width="20px" style="vertical-align: middle;">';
+    }
     echo "</b></legend>";?>
     <img src="<?php echo $val["img"];?>" id="photo"><?php
     echo "<br>";
@@ -102,7 +81,7 @@ foreach ($img as $val) {
 
     echo "<i>Posté le " . $formattedDate . "</i><br>";
 
-    if (isset($_SESSION["user"]) && $_SESSION["user"] == $val["id_user"]) {?>
+    if (isset($_SESSION["isAdmin"]) && $_SESSION["isAdmin"] == 1 || (isset($_SESSION["user"]) && $_SESSION["user"] == $val["id_user"])) {?>
         <a href="supImage.php?id=<?php echo $val["id_image"]; ?>">
         <button class="delete-btn" onclick="deleteImage('<?php $val['id_image']?> ')"><img src="image/poubelle.png" alt="Supprimer"></button></a><?php
     }
