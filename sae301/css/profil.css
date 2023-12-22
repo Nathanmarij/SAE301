@@ -115,6 +115,20 @@ button:hover {
     background-color: #bd2130; /* Foncer la couleur au survol */
 }
 
+.btn-admin {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none; /* Pour le lien de déconnexion */
+    margin-top: 10px;
+}
+
+.btn-admin:hover {
+    background-color: #218838;
+}
 .decsupp {
     display: flex
 }

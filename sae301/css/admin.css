@@ -1,0 +1,88 @@
+/* Styles de base */
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+article {
+    margin-bottom: 20px;
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+header h2 {
+    color: #fff;
+}
+
+/* Formulaires et champs de saisie */
+form {
+    margin-top: 1em;
+}
+
+li {
+    list-style-type: none;
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: .5em;
+    color: #666;
+}
+
+input[type="text"], input[type="datetime"], input[type="number"], input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Boutons */
+button {
+    background-color: #5C6BC0;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #3949AB;
+}
+
+button[type="reset"] {
+    background-color: #ef5350;
+}
+
+button[type="reset"]:hover {
+    background-color: #d32f2f;
+}
+
+/* Liens de suppression */
+a {
+    color: #ef5350;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+

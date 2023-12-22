@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/style2.css" type="text/css" rel="stylesheet" />
+    <link href="css/admin.css" type="text/css" rel="stylesheet" />
     <script src="js/script.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
     <link rel="icon" href="favicon.ico">
@@ -12,6 +12,11 @@
     <?php
     include("config.php");
     session_start();
+
+    if (!isset($_SESSION['user']) || $_SESSION['isAdmin'] != 1) {
+        die("Accès refusé.");
+    }
+
     try {
         $bdd = new PDO('mysql:host=' . $hote . ';port=' . $port . ';dbname=' . $nombase, $utilisateur, $mdp);
     } catch (Exception $e) { // sinon
@@ -20,12 +25,6 @@
 
     if (isset($_SESSION["user"])) { // si l'utilisateur est connecté
         $iduser = $_SESSION["user"];
-        ?>
-        <h1>Vous êtes connecté</h1>
-        <a href="deconnexion.php">
-            <h1>deconnexion</h1>
-        </a>
-        <?php
         $requete = 'SELECT id_user, nom, prenom FROM user WHERE id_user = :id';
         $statement = $bdd->prepare($requete);
         $statement->bindParam(':id', $iduser, PDO::PARAM_INT);
@@ -37,37 +36,7 @@
 </head>
 
 <body>
-    <header>
-        <div class="header">
-            <div class="btn-nav navbar">
-                <!-- Boutons de navigation -->
-                <a href="#actions">
-                    <h2>Billetterie</h2>
-                </a>
-                <a href="forum.php">
-                    <h2>Forum</h2>
-                </a>
-                <a href="#interventions">
-                    <h2>Contact</h2>
-                </a>
-            </div>
-            <div class="logo">
-                <!-- Logo -->
-                <a href="index.php">
-                        <img src="image/logo.png" alt="UNICEF logo">
-                    </a>
-            </div>
-            <div class="btn-nav compte">
-                <!-- Boutons d'inscription et de connexion -->
-                <a href="inscription.php">
-                    <h2>Inscription</h2>
-                </a>
-                <a href="connexion.php">
-                    <h2>Connexion</h2>
-                </a>
-            </div>
-        </div>
-    </header>
+    <?php include("header.php"); ?>
     <section>
         <article>
             <h3>Ajouter un festival</h3>
@@ -126,34 +95,10 @@ try {
     $forum = $statement->fetchAll(PDO::FETCH_ASSOC);
     
     ?>
-    <form action="adminTraitement.php" method="POST" class="commentaire">
-                <?php
-                if (isset($forum)) { // vérifie si il y a des commentaires sur l'article
-                    foreach ($forum as $val):
-                $requete = 'SELECT id_reponse, contenu FROM reponse WHERE id_ask=' . $val["id_ask"]; //requête permettant de récupérer le nom et le prenom de la personne qui a écrit un commentaire
-                $requete = $bdd->query($requete);
-                $rep = $requete->fetch(PDO::FETCH_ASSOC);
-                $requete->closeCursor();
-                if (empty($rep)) {?>
-                <input type="radio" name="comm" id="comm" value="<?php echo $val["id_ask"];?>" checked /><?php 
-                $idcomm = $val["id_ask"];
-                $requete = 'SELECT id_ask, content FROM forum WHERE id_ask=' . $idcomm; //requête permettant de récupérer le nom et le prenom de la personne qui a écrit un commentaire
-                $requete = $bdd->query($requete);
-                $comm = $requete->fetch(PDO::FETCH_ASSOC);
-                $requete->closeCursor(); ?>
-                    <?php echo $comm["content"];
-                
-                } else {
-                    echo '';
-                }
-                
-                endforeach;}?>
-                <input type="text" placeholder="Répondre à la question" id="reponse" name="reponse" class="ecrir">
-                <input type="submit" id="submit" name="submit" value="Répondre">
-
+    
         </article>
         <article class="suppfestival">
-            <h3>Supprimer un festival<h3>
+            <h1>Supprimer un festival</h1>
             <form method="POST">
             <li>
             <label for="nom">Choisir le nom du festival</label>
@@ -171,11 +116,34 @@ try {
             <a href="">Supprimer le cinqième artiste</a>
             </form>
         </article>
+        <form action="promouvoirAdmin.php" method="post">
+        <h1>Promouvoir quelqu'un Admin</h1>
+            <input type="email" name="email" placeholder="Entrez l'email de l'utilisateur">
+            <input type="submit" value="Promouvoir comme Admin">
+        </form>
+        <?php
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $email = $_POST['email'];
+
+            // Vérifier si l'email existe dans la base de données
+            $stmt = $bdd->prepare("SELECT id_user FROM user WHERE mail = :email");
+            $stmt->bindParam(':email', $email);
+            $stmt->execute();
+            $user = $stmt->fetch();
+
+            if ($user) {
+                // Si l'utilisateur existe, mettez à jour son statut d'administrateur
+                $updateStmt = $bdd->prepare("UPDATE user SET isAdmin = 1 WHERE id_user = :id_user");
+                $updateStmt->bindParam(':id_user', $user['id_user']);
+                $updateStmt->execute();
+
+                echo "L'utilisateur a été promu administrateur.";
+            } else {
+                echo "Aucun utilisateur trouvé avec cet email.";
+            }
+        }
+        ?>
     </section>
-
-    <footer>
-
-    </footer>
 </body>
 
 </html>

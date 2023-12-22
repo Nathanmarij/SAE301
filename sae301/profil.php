@@ -187,7 +187,7 @@ elseif ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div><br>
     <?php
     if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == 1) {
-        ?><a href="promouvoirAdmin.php" class="btn-deconnexion">Droits Admin</a><?php
+        ?><a href="administration.php" class="btn-admin">Droits Admin</a><?php
     }
     ?>
 </body>
