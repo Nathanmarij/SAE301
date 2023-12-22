@@ -1,4 +1,8 @@
 // JavaScript code for 'script2.js'
+function toggleMenu() {
+    var menu = document.querySelector('.hamburger-menu');
+    menu.classList.toggle('active');
+}
 
 document.addEventListener('DOMContentLoaded', function() {
     // Sélectionner tous les éléments avec la classe 'billet'

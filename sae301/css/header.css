@@ -16,11 +16,14 @@ html, body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(135deg, #00A3FF 0%, #0066FF 100%);
+    background: linear-gradient(135deg, #000000 0%, #1E1E1E 100%);
     padding: 10px 20px;
     color: white;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s, box-shadow 0.3s, padding 0.3s;
+    background: linear-gradient(135deg, #000000, #024fa2fe);
+    background-size: 200% 200%; /* Taille du dégradé pour permettre l'animation */
+    animation: rotatingGradient 5s linear infinite;
 }
 .scroll-active .header {
     padding: 5px 20px;
@@ -46,7 +49,7 @@ html, body {
 .btn-nav a {
     text-decoration: none;
     color: white;
-    font-family: 'Kumbh Sans', sans-serif; /* Police cohérente */
+    font-family: 'Quicksand', sans-serif; /* Police cohérente */
     font-size: 18px;
     transition: color 0.3s;
     position: relative;
@@ -90,3 +93,80 @@ html, body {
     }
 }
 
+/* Hamburger Menu */
+.hamburger-menu {
+    display: none;
+}
+
+.hamburger {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    margin: 5px auto;
+    transition: 0.3s;
+}
+
+/* Show the menu in mobile view */
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: block;
+    }
+}
+/* Animation for hamburger icon */
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+@keyframes rotatingGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+/* Style de base pour les boutons d'inscription et de connexion */
+.btn-compte a {
+    text-decoration: none;
+    display: inline-block;
+    background-color: #0057B8;
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    margin: 5px;
+}
+
+/* Effet de survol pour les boutons */
+.btn-compte a:hover {
+    background-color: #003164fe;
+    color: #e3e3e3;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Style pour les titres <h2> dans les liens, si nécessaire */
+.btn-compte h2 {
+    margin: 0; /* Réinitialiser la marge par défaut de <h2> */
+    font-size: inherit; /* Utiliser la taille de police du parent */
+    color: inherit; /* Utiliser la couleur du texte du parent */
+}

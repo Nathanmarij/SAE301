@@ -45,8 +45,9 @@ body {
 }
 
 .billeterie {
-    background-color: rgb(69, 201, 216);
-    /* Ajuster l'opacité si nécessaire */
+    background: linear-gradient(135deg, #000000, #024fa2fe);
+    background-size: 200% 200%; /* Taille du dégradé pour permettre l'animation */
+    animation: rotatingGradient 5s linear infinite;
 
     display: flex;
     justify-content: center;
@@ -112,7 +113,7 @@ body {
 
 /* Effet de lueur externe */
 .billet {
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
 }
 
 /* Effet de reflet brillant */
@@ -315,3 +316,14 @@ body {
 
 
  }
+ @keyframes rotatingGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}

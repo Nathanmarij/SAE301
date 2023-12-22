@@ -20,14 +20,9 @@
     }
     ?>
 </head>
-
-<body>
-    </head>
-
     <body>
     <header>
         <div class="header">
-            
             <div class="logo">
             <a href="index.php">
             <!-- Logo -->
@@ -49,8 +44,7 @@
             </div>
             </div>
 
-
-            <div class="btn-nav compte">
+            <div class="btn-compte">
                 <!-- Boutons d'inscription et de connexion -->
                 <?php
                 if (isset($_SESSION["user"])) { // si l'utilisateur est connecté
@@ -70,8 +64,6 @@
                     </a>
                     <?php
                 } ?>
-
-
             </div>
         </div>
     </header>
